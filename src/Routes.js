@@ -1,20 +1,14 @@
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from './pages/Home';
 import React from "react";
-import App from "./App";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "./ThemeContext"; 
-import ToDoList from "./ToDoList";
 
 function Routing() {
   return (
-    <ThemeProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/ToDo" element={<ToDoList/>}/>
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
+    <Router>
+      <Switch> 
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </Router>
   );
 }
-
 export default Routing;
